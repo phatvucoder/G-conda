@@ -23,7 +23,7 @@ import subprocess
 import sys
 
 
-def check_conda() -> str:
+def check_conda() -> bool:
     """
     Checks if Conda is installed and returns a message with the version if available.
 
@@ -34,14 +34,17 @@ def check_conda() -> str:
     if conda_path:
         try:
             version = subprocess.check_output(["conda", "--version"], text=True).strip()
-            return f"✅ Conda is installed. Version: {version}"
+            print(f"✅ Conda is installed. Version: {version}")
+            return True
         except subprocess.CalledProcessError:
-            return "⚠️ Conda is installed, but the version could not be retrieved."
+            print("⚠️ Conda is installed, but the version could not be retrieved.")
+            return True
     else:
-        return "❌ Conda is not installed."
+        print("❌ Conda is not installed.")
+        return False
 
 
-def check_python() -> str:
+def check_python() -> bool:
     """
     Checks if Python is installed and returns a message with the version if available.
 
@@ -52,11 +55,14 @@ def check_python() -> str:
     if python_path:
         try:
             version = subprocess.check_output(["python", "--version"], text=True).strip()
-            return f"✅ Python is installed. Version: {version}"
+            print(f"✅ Python is installed. Version: {version}")
+            return True
         except subprocess.CalledProcessError:
-            return "⚠️ Python is installed, but the version could not be retrieved."
+            "⚠️ Python is installed, but the version could not be retrieved."
+            return True
     else:
-        return "❌ Python is not installed."
+        print("❌ Python is not installed.")
+        return False
 
 
 def install_conda():

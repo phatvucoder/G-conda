@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "gconda"
-version = "0.1.1"
+version = "0.1.2"
 description = "A library to manage environment on Google Colab and Kaggle."
 authors = ["Hoang-Phat Vu <phatvucoder@gmail.com>"]
 readme = "README.md"

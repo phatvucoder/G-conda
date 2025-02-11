@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="gconda",
-    version="0.1.1",
+    version="0.1.2",
     author="Hoang-Phat Vu",
     author_email="phatvucoder@gmail.com",
     description="A library to manage environment on Google Colab and Kaggle.",
